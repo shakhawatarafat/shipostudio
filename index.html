@@ -591,6 +591,9 @@
     }
 
     @media (max-width: 640px) {
+      .not-mobile{
+        display: none !important;
+      }
       .container { width: min(calc(100% - 22px), var(--container)); }
       .hero-metrics { grid-template-columns: 1fr; }
       .hero-actions .btn { width: 100%; }
@@ -625,7 +628,7 @@
 
       <div style="display:flex; gap:12px; align-items:center;">
         <a class="btn mobile-only" href="#contact">Contact</a>
-        <a class="btn btn-primary" href="#contact">Book a call</a>
+        <a class="btn btn-primary not-mobile" href="#contact">Book a call</a>
       </div>
     </div>
   </header>
