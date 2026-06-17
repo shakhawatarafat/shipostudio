@@ -10,17 +10,14 @@
       --bg: #05070c;
       --bg-2: #0b1220;
       --panel: rgba(255,255,255,.04);
-      --panel-2: rgba(255,255,255,.07);
       --line: rgba(255,255,255,.10);
       --text: #f5f7fb;
       --muted: rgba(245,247,251,.72);
       --accent: #4f7bff;
       --accent-2: #1db7d8;
-      --success: #25d366;
       --shadow: 0 30px 100px rgba(0,0,0,.42);
       --radius-xl: 34px;
       --radius-lg: 24px;
-      --radius-md: 18px;
       --container: 1180px;
     }
 
@@ -58,22 +55,6 @@
       justify-content: space-between;
       gap: 18px;
       padding: 16px 0;
-      position: relative;
-      z-index: 201;
-    }
-    .brand {
-      top: 0;
-      z-index: 100;
-      background: rgba(5,7,12,.74);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--line);
-    }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 16px 0;
     }
     .brand {
       display: flex;
@@ -81,26 +62,25 @@
       gap: 12px;
       min-width: 0;
     }
+    .brand img,
     .brand-mark {
       width: 46px;
       height: 46px;
       border-radius: 15px;
       flex: 0 0 auto;
+    }
+    .brand img {
+      object-fit: cover;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+    }
+    .brand-mark {
       display: grid;
       place-items: center;
       background: linear-gradient(135deg, rgba(79,123,255,.98), rgba(29,183,216,.92));
       color: #fff;
       font-weight: 800;
       letter-spacing: -.04em;
-    }
-    .brand img {
-      width: 46px;
-      height: 46px;
-      border-radius: 15px;
-      flex: 0 0 auto;
-      object-fit: cover;
-      background: rgba(255,255,255,.04);
-      border: 1px solid var(--line);
     }
     .brand-text { display: flex; flex-direction: column; min-width: 0; }
     .brand-text strong { font-size: 1.05rem; letter-spacing: -.04em; line-height: 1.1; }
@@ -175,12 +155,7 @@
       color: var(--muted);
       font-size: 1.05rem;
     }
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 28px;
-    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
     .hero-metrics {
       display: grid;
       grid-template-columns: repeat(3, minmax(0,1fr));
@@ -257,12 +232,7 @@
       letter-spacing: -.05em;
       max-width: 12ch;
     }
-    .project-hero-left p {
-      margin: 0;
-      color: var(--muted);
-      max-width: 28ch;
-      font-size: .98rem;
-    }
+    .project-hero-left p { margin: 0; color: var(--muted); max-width: 28ch; font-size: .98rem; }
     .project-thumb {
       border-radius: 24px;
       overflow: hidden;
@@ -273,9 +243,7 @@
     }
     .project-thumb img,
     .gallery-card img,
-    .about-photo img {
-      width: 100%; height: 100%; object-fit: cover;
-    }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; }
 
     .fallback {
       display: none;
@@ -333,10 +301,7 @@
     .project-card h3,
     .testimonial-card h3,
     .contact-card h3,
-    .about-copy h3 {
-      margin: 12px 0 8px;
-      letter-spacing: -.04em;
-    }
+    .about-copy h3 { margin: 12px 0 8px; letter-spacing: -.04em; }
     .service-card p,
     .project-card p,
     .testimonial-card p,
@@ -367,11 +332,7 @@
       gap: 12px;
       align-items: end;
     }
-    .project-card .project-content small {
-      display: block;
-      color: var(--muted);
-      margin-top: 3px;
-    }
+    .project-card .project-content small { display: block; color: var(--muted); margin-top: 3px; }
     .label {
       display: inline-flex;
       align-items: center;
@@ -402,11 +363,7 @@
       justify-content: center;
       gap: 18px;
     }
-    .about-copy .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+    .about-copy .tag-row { display: flex; flex-wrap: wrap; gap: 10px; }
     .about-copy .quote {
       font-size: clamp(1.25rem, 2vw, 1.65rem);
       line-height: 1.45;
@@ -442,9 +399,7 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 18px;
     }
-    .app-card {
-      padding: 22px;
-    }
+    .app-card { padding: 22px; }
     .app-card .app-top {
       display: flex;
       justify-content: space-between;
@@ -501,11 +456,7 @@
     }
     .gallery-big .overlay strong { display: block; font-size: 1.2rem; margin-bottom: 4px; }
     .gallery-side { display: grid; gap: 18px; }
-    .gallery-card {
-      position: relative;
-      overflow: hidden;
-      min-height: 201px;
-    }
+    .gallery-card { position: relative; overflow: hidden; min-height: 201px; }
 
     .faq-item {
       border-top: 1px solid var(--line);
@@ -570,7 +521,6 @@
       transition: opacity .75s ease, transform .75s ease;
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-
     .mobile-only { display: none; }
 
     .whatsapp-fab {
@@ -599,15 +549,8 @@
       animation: ping 2.2s ease-out infinite;
     }
 
-    @keyframes floaty {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-    @keyframes ping {
-      0% { transform: scale(.85); opacity: .9; }
-      70% { transform: scale(1.18); opacity: 0; }
-      100% { transform: scale(1.18); opacity: 0; }
-    }
+    @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    @keyframes ping { 0% { transform: scale(.85); opacity: .9; } 70% { transform: scale(1.18); opacity: 0; } 100% { transform: scale(1.18); opacity: 0; } }
 
     @media (max-width: 1080px) {
       .hero-grid,
@@ -652,7 +595,6 @@
           <span>Shopify design & development</span>
         </div>
       </a>
-
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#work">Work</a>
         <a href="#about">About</a>
@@ -661,7 +603,6 @@
         <a href="#reviews">Reviews</a>
         <a href="#contact">Contact</a>
       </nav>
-
       <div style="display:flex; gap:12px; align-items:center;">
         <a class="btn mobile-only" href="#contact">Contact</a>
         <a class="btn btn-primary not-mobile" href="#contact">Book a call</a>
@@ -676,15 +617,13 @@
           <div class="eyebrow"><span class="dot"></span> Premium Shopify design with clean structure and strong branding</div>
           <h1>Shopify websites that feel polished and clear.</h1>
           <p>
-            I create modern ecommerce experiences with better layout, stronger presentation, and practical structure.
-            From custom sections to full redesigns, my focus is on making stores look professional and easy to trust.
+            Shipo Studio creates modern ecommerce experiences with better layout, stronger presentation, and practical structure.
+            From custom sections to full redesigns, the focus is on making stores look professional and easy to trust.
           </p>
-
           <div class="hero-actions">
             <a class="btn btn-primary" href="#work">See selected work</a>
             <a class="btn btn-ghost" href="#about">About me</a>
           </div>
-
           <div class="hero-metrics">
             <div class="metric">
               <strong>Custom Shopify</strong>
@@ -700,22 +639,19 @@
             </div>
           </div>
         </div>
-
         <div class="showcase reveal">
           <div class="showcase-top">
             <div class="chip">Portfolio preview</div>
-            <div class="chip">Use your best screenshot here</div>
+            <div class="chip">Featured project preview</div>
           </div>
-
           <div class="project-hero">
             <div class="project-hero-left">
               <div>
                 <h3>A studio-style homepage that feels premium.</h3>
-                <p>Use this space to show your strongest concept and first impression.</p>
+                <p>This area is designed to show a strong first impression and highlight your best work.</p>
               </div>
-              <div class="chip">Ideal for brands that want clean design</div>
+              <div class="chip">Ideal for brands that want a clean premium look</div>
             </div>
-
             <div class="project-thumb">
               <img src="./images/home2.png" alt="Featured website project" onerror="this.style.display='none'; this.nextElementSibling.classList.add('show');">
               <div class="fallback">Hero image slot<br><br>Use: <strong>./images/home2.png</strong></div>
@@ -730,10 +666,9 @@
         <div class="section-head reveal">
           <div>
             <h2>About me</h2>
-            <p>Visitors should immediately understand who you are, what you do, and why you are credible.</p>
+            <p>Visitors should immediately understand who you are, what you do, and why your work stands out.</p>
           </div>
         </div>
-
         <div class="about-section">
           <div class="card about-photo reveal">
             <img src="./images/my image.jpg" alt="Shakhawat Arafat" onerror="this.style.display='none'; this.nextElementSibling.classList.add('show');">
@@ -748,10 +683,10 @@
             </div>
             <h3 class="quote">I build stores that look like real brands, not generic templates.</h3>
             <p>
-              I’m Shakhawat Arafat, the founder of Shipo Studio, a Shopify designer and developer focused on clean ecommerce design, practical builds, and premium presentation. My goal is to make the store feel clear, elegant, and easy to trust.
+              I’m Shakhawat Arafat, the founder of Shipo Studio, a Shopify designer and developer focused on clean ecommerce design, practical builds, and premium presentation. The goal is simple: make the store feel clear, elegant, and easy to trust.
             </p>
             <p>
-              I also have apps published on the Shopify App Store. You can view my partner profile here:
+              I also have apps published on the Shopify App Store. View my partner profile here:
               <a href="https://apps.shopify.com/partners/shakhawatarafat" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;">apps.shopify.com/partners/shakhawatarafat</a>
             </p>
             <div class="hero-actions" style="margin-top: 0;">
@@ -768,11 +703,10 @@
         <div class="section-head reveal">
           <div>
             <h2>Selected projects</h2>
-            <p>Each project card is organized with a clear label so the portfolio feels easier to scan.</p>
+            <p>Each project card is organized with a clear label so the portfolio is easy to scan.</p>
           </div>
           <a class="btn" href="#contact">Send project info</a>
         </div>
-
         <div class="grid-3">
           <article class="card project-card reveal">
             <div class="project-media">
@@ -787,7 +721,6 @@
               <span class="label">Homepage redesign</span>
             </div>
           </article>
-
           <article class="card project-card reveal">
             <div class="project-media">
               <img src="./images/wallart2.png" alt="Wall art project 2" onerror="this.style.display='none'; this.nextElementSibling.classList.add('show');">
@@ -801,7 +734,6 @@
               <span class="label">Custom sections</span>
             </div>
           </article>
-
           <article class="card project-card reveal">
             <div class="project-media">
               <img src="./images/redesign.png" alt="Redesign project" onerror="this.style.display='none'; this.nextElementSibling.classList.add('show');">
@@ -824,10 +756,9 @@
         <div class="section-head reveal">
           <div>
             <h2>Apps published on Shopify App Store</h2>
-            <p>Add your published apps here so people can instantly see that you build beyond themes and sections.</p>
+            <p>These apps show that Shipo Studio builds beyond theme work and creates useful Shopify solutions.</p>
           </div>
         </div>
-
         <div class="apps-grid">
           <article class="card app-card reveal">
             <div class="app-top">
@@ -837,25 +768,20 @@
               </div>
               <span class="label">Live</span>
             </div>
-            <p>
-              View my published Shopify app profile and app listings here.
-            </p>
+            <p>View my published Shopify app profile and app listings here.</p>
             <div class="hero-actions" style="margin-top:18px;">
               <a class="btn btn-primary" href="https://apps.shopify.com/partners/shakhawatarafat" target="_blank" rel="noopener noreferrer">Open profile</a>
             </div>
           </article>
-
           <article class="card app-card reveal">
             <div class="app-top">
               <div>
                 <span class="label">App showcase</span>
                 <h3>Custom app highlights</h3>
               </div>
-              <span class="label">Add more</span>
+              <span class="label">Featured</span>
             </div>
-            <p>
-              Use this space to list each app name, purpose, and a short result statement once you want to showcase them individually.
-            </p>
+            <p>This space highlights each app name, its purpose, and a short result statement.</p>
             <div class="hero-actions" style="margin-top:18px;">
               <a class="btn btn-ghost" href="#contact">Ask for app work</a>
             </div>
@@ -869,23 +795,20 @@
         <div class="section-head reveal">
           <div>
             <h2>Services</h2>
-            <p>A simple structure works best for getting client inquiries. This keeps the offer easy to understand.</p>
+            <p>A clean structure helps people understand the offer quickly and move toward contact with confidence.</p>
           </div>
         </div>
-
         <div class="grid-3">
           <article class="card service-card reveal">
             <div class="icon-badge">✦</div>
             <h3>Shopify store design</h3>
-            <p>Homepage, product page, collection page, and all the important sections needed for a strong ecommerce store.</p>
+            <p>Homepage, product page, collection page, and the important sections needed for a strong ecommerce store.</p>
           </article>
-
           <article class="card service-card reveal">
             <div class="icon-badge">⌁</div>
             <h3>Custom sections</h3>
-            <p>Editable sections for banners, product grids, testimonials, galleries, and special brand storytelling blocks.</p>
+            <p>Editable sections for banners, product grids, testimonials, galleries, and brand storytelling blocks.</p>
           </article>
-
           <article class="card service-card reveal">
             <div class="icon-badge">◎</div>
             <h3>Redesigns & cleanup</h3>
@@ -900,48 +823,22 @@
         <div class="section-head reveal">
           <div>
             <h2>How I work</h2>
-            <p>Show this section so people understand the process before they contact you.</p>
+            <p>This section makes the process clear before a client reaches out.</p>
           </div>
         </div>
-
         <div class="grid-2">
           <div class="card process-card reveal">
             <h3>Project flow</h3>
             <div class="step-list">
-              <div class="step">
-                <div class="step-num">1</div>
-                <div>
-                  <h4>Discovery</h4>
-                  <p>Learn the brand, audience, products, and what kind of website the client wants.</p>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">2</div>
-                <div>
-                  <h4>Design direction</h4>
-                  <p>Shape the style, layout, and content blocks into a clear visual direction.</p>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">3</div>
-                <div>
-                  <h4>Build</h4>
-                  <p>Turn the design into a responsive HTML / Shopify-ready structure.</p>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">4</div>
-                <div>
-                  <h4>Launch</h4>
-                  <p>Final checks, revisions, and handoff so the site is ready to go live.</p>
-                </div>
-              </div>
+              <div class="step"><div class="step-num">1</div><div><h4>Discovery</h4><p>Learn the brand, audience, products, and the website goals.</p></div></div>
+              <div class="step"><div class="step-num">2</div><div><h4>Design direction</h4><p>Shape the style, layout, and content blocks into a clear visual direction.</p></div></div>
+              <div class="step"><div class="step-num">3</div><div><h4>Build</h4><p>Turn the design into a responsive HTML / Shopify-ready structure.</p></div></div>
+              <div class="step"><div class="step-num">4</div><div><h4>Launch</h4><p>Final checks, revisions, and handoff so the site is ready to go live.</p></div></div>
             </div>
           </div>
-
           <div class="card process-card reveal">
             <h3>What this page is built for</h3>
-            <p style="margin-top:14px;">It looks professional, gives clear service information, and has obvious places for your best images.</p>
+            <p style="margin-top:14px;">It gives the page a polished feel and creates clear places for your best images and proof of work.</p>
             <div style="display:grid; gap:12px; margin-top:18px;">
               <div class="label">Logo slot in header</div>
               <div class="label">About me section</div>
@@ -959,57 +856,29 @@
         <div class="section-head reveal">
           <div>
             <h2>Client reviews</h2>
-            <p>These are sample placeholders written in a more realistic style. Replace them with real client quotes before publishing.</p>
+            <p>What clients say about working with Shipo Studio.</p>
           </div>
         </div>
-
         <div class="testimonial-grid">
           <article class="card testimonial-card reveal">
             <div class="stars">★★★★★</div>
             <div class="quote">“The store looked much more premium after the redesign. Clean layout, strong section flow, and fast communication throughout the project.”</div>
-            <div class="author">
-              <div class="avatar"></div>
-              <div>
-                <strong>Emily Johnson</strong>
-                <span>Fashion brand founder</span>
-              </div>
-            </div>
+            <div class="author"><div class="avatar"></div><div><strong>Emily Johnson</strong><span>Fashion brand founder</span></div></div>
           </article>
-
           <article class="card testimonial-card reveal">
             <div class="stars">★★★★★</div>
             <div class="quote">“Great attention to detail. The custom sections made the website feel more polished and easier for our customers to browse.”</div>
-            <div class="author">
-              <div class="avatar"></div>
-              <div>
-                <strong>Daniel Brooks</strong>
-                <span>DTC store owner</span>
-              </div>
-            </div>
+            <div class="author"><div class="avatar"></div><div><strong>Daniel Brooks</strong><span>DTC store owner</span></div></div>
           </article>
-
           <article class="card testimonial-card reveal">
             <div class="stars">★★★★★</div>
             <div class="quote">“Very organized work. The project was delivered with a clear structure and a more professional look than our previous version.”</div>
-            <div class="author">
-              <div class="avatar"></div>
-              <div>
-                <strong>Aisha Rahman</strong>
-                <span>Creative director</span>
-              </div>
-            </div>
+            <div class="author"><div class="avatar"></div><div><strong>Aisha Rahman</strong><span>Creative director</span></div></div>
           </article>
-
           <article class="card testimonial-card reveal">
             <div class="stars">★★★★★</div>
             <div class="quote">“Easy to work with and strong on design decisions. The final result matched our brand direction much better than expected.”</div>
-            <div class="author">
-              <div class="avatar"></div>
-              <div>
-                <strong>Sofia Martinez</strong>
-                <span>Retail operations lead</span>
-              </div>
-            </div>
+            <div class="author"><div class="avatar"></div><div><strong>Sofia Martinez</strong><span>Retail operations lead</span></div></div>
           </article>
         </div>
       </div>
@@ -1019,21 +888,16 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <h2>Gallery / social proof</h2>
-            <p>Use this area for screenshots, brand mockups, concept pieces, or client results.</p>
+            <h2>Featured Work</h2>
+            <p>Explore a collection of premium Shopify designs, custom development projects, and ecommerce experiences built with performance, usability, and brand identity in mind.</p>
           </div>
         </div>
-
         <div class="gallery-strip">
           <div class="card gallery-big reveal">
             <img src="./images/print1.png" alt="Main gallery image" onerror="this.style.display='none'; this.nextElementSibling.classList.add('show');">
             <div class="fallback">Main gallery image<br><br>./images/print1.png</div>
-            <div class="overlay">
-              <strong>Design concepts that feel premium.</strong>
-              <div style="color:var(--muted)">Place your strongest screenshot here.</div>
-            </div>
+            <div class="overlay"><strong>Design concepts that feel premium.</strong><div style="color:var(--muted)">Place a strong screenshot or mockup here.</div></div>
           </div>
-
           <div class="gallery-side">
             <div class="card gallery-card reveal">
               <img src="./images/print2.png" alt="Gallery image one" onerror="this.style.display='none'; this.nextElementSibling.classList.add('show');">
@@ -1056,7 +920,6 @@
             <p>Short answers help remove confusion before a client sends a message.</p>
           </div>
         </div>
-
         <div class="card faq-card reveal">
           <details class="faq-item" open>
             <summary class="faq-q">What kind of services do you offer?<span class="plus">−</span></summary>
@@ -1082,18 +945,15 @@
             <p>Keep the call-to-action simple and visible. That helps people send an inquiry quickly.</p>
           </div>
         </div>
-
         <div class="contact-wrap">
           <div class="card contact-card reveal">
             <h3>Shipo Studio</h3>
             <p>Shopify design & development for brands that want a stronger, more polished online presence.</p>
-
             <div class="hero-actions" style="margin-top:18px;">
               <a class="btn btn-primary" id="emailBtn" href="#">Email me</a>
               <a class="btn btn-ghost" href="https://wa.me/447366434592" target="_blank" rel="noopener noreferrer">WhatsApp</a>
             </div>
           </div>
-
           <form class="card contact-form reveal" onsubmit="event.preventDefault(); alert('Demo form only. Connect this to your email service later.');">
             <input class="field" type="text" placeholder="Your name" required>
             <input class="field" type="email" placeholder="Your email" required>
@@ -1124,21 +984,17 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
     const emailBtn = document.getElementById('emailBtn');
     emailBtn.addEventListener('click', (e) => {
       e.preventDefault();
       window.location.href = 'mailto:shakhawatarafat@gmail.com';
     });
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.15 });
-
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
     document.querySelectorAll('img').forEach(img => {
       img.addEventListener('error', () => {
         const fallback = img.nextElementSibling;
