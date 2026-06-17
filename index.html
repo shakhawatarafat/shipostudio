@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shipo Studio — Shopify Design & Development</title>
-  <meta name="description" content="Shipo Studio creates premium Shopify websites, custom sections, and conversion-focused ecommerce experiences." />
+  <title>Shakhawat Arafat — Shopify Design & Development</title>
+  <meta name="description" content="Shakhawat Arafat creates premium Shopify stores, custom sections, published apps, and conversion-focused ecommerce experiences." />
   <style>
     :root {
       --bg: #05070c;
-      --bg-2: #09111f;
+      --bg-2: #0b1220;
       --panel: rgba(255,255,255,.04);
       --panel-2: rgba(255,255,255,.07);
       --line: rgba(255,255,255,.10);
@@ -65,19 +65,11 @@
       gap: 12px;
       min-width: 0;
     }
-    .brand img,
     .brand-mark {
       width: 46px;
       height: 46px;
       border-radius: 15px;
       flex: 0 0 auto;
-    }
-    .brand img {
-      object-fit: cover;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.04);
-    }
-    .brand-mark {
       display: grid;
       place-items: center;
       background: linear-gradient(135deg, rgba(79,123,255,.98), rgba(29,183,216,.92));
@@ -97,9 +89,6 @@
     }
     .nav-links a:hover { color: var(--text); }
 
-    form.card.contact-form.reveal.visible{
-      display: none !important:
-    }
     .btn {
       display: inline-flex;
       align-items: center;
@@ -307,7 +296,14 @@
       backdrop-filter: blur(12px);
     }
 
-    .service-card { padding: 22px; }
+    .service-card,
+    .project-card .project-content,
+    .testimonial-card,
+    .contact-card,
+    .about-copy,
+    .process-card,
+    .faq-card { padding: 22px; }
+
     .service-card h3,
     .project-card h3,
     .testimonial-card h3,
@@ -322,6 +318,7 @@
     .contact-card p,
     .faq-card p,
     .about-copy p { margin: 0; color: var(--muted); }
+
     .icon-badge {
       width: 52px;
       height: 52px;
@@ -340,7 +337,6 @@
       background: linear-gradient(160deg, rgba(79,123,255,.12), rgba(29,183,216,.10));
     }
     .project-card .project-content {
-      padding: 18px;
       display: flex;
       justify-content: space-between;
       gap: 12px;
@@ -376,7 +372,6 @@
     }
     .about-photo .fallback { border-radius: 0; }
     .about-copy {
-      padding: 26px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -394,11 +389,7 @@
       margin: 0;
     }
 
-    .process-card,
-    .contact-card,
-    .testimonial-card,
-    .faq-card { padding: 22px; }
-    .step-list { display: grid; gap: 12px; margin-top: 18px; }
+    .process-card .step-list { display: grid; gap: 12px; margin-top: 18px; }
     .step {
       display: flex;
       gap: 14px;
@@ -420,6 +411,47 @@
     }
     .step h4 { margin: 0 0 4px; }
     .step p { margin: 0; color: var(--muted); }
+
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .app-card {
+      padding: 22px;
+    }
+    .app-card .app-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: start;
+    }
+    .app-card h3 { margin: 12px 0 8px; }
+    .app-card p { margin: 0; color: var(--muted); }
+
+    .testimonial-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .stars { color: #f0c14b; letter-spacing: .14em; }
+    .quote {
+      font-size: clamp(1.08rem, 1.8vw, 1.35rem);
+      line-height: 1.55;
+      letter-spacing: -.03em;
+      margin: 12px 0 16px;
+    }
+    .author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(79,123,255,.92), rgba(29,183,216,.72));
+      flex: 0 0 auto;
+    }
+    .author strong { display: block; }
+    .author span { color: var(--muted); font-size: .92rem; }
 
     .gallery-strip {
       display: grid;
@@ -450,30 +482,6 @@
       min-height: 201px;
     }
 
-    .testimonial-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .stars { color: #f0c14b; letter-spacing: .14em; }
-    .quote {
-      font-size: clamp(1.1rem, 2vw, 1.5rem);
-      line-height: 1.45;
-      letter-spacing: -.03em;
-      margin: 12px 0 16px;
-    }
-    .author {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: 18px;
-    }
-    .avatar {
-      width: 48px;
-      height: 48px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, rgba(79,123,255,.92), rgba(29,183,216,.72));
-      flex: 0 0 auto;
-    }
-    .author strong { display: block; }
-    .author span { color: var(--muted); font-size: .92rem; }
-
     .faq-item {
       border-top: 1px solid var(--line);
       padding: 18px 0;
@@ -501,7 +509,7 @@
       gap: 18px;
     }
     .contact-form {
-      display: none;
+      display: grid;
       gap: 12px;
       padding: 22px;
     }
@@ -556,7 +564,7 @@
       animation: floaty 3.8s ease-in-out infinite;
       border: 2px solid rgba(255,255,255,.18);
     }
-    .whatsapp-fab svg { width: 30px; height: 30px; display: block; }
+    .whatsapp-fab img { width: 30px; height: 30px; object-fit: contain; }
     .whatsapp-fab::after {
       content: "";
       position: absolute;
@@ -583,7 +591,8 @@
       .gallery-strip,
       .testimonial-grid,
       .contact-wrap,
-      .about-section { grid-template-columns: 1fr; }
+      .about-section,
+      .apps-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
       .mobile-only { display: inline-flex; }
       .hero { padding-top: 34px; }
@@ -594,9 +603,7 @@
     }
 
     @media (max-width: 640px) {
-      .not-mobile{
-        display: none !important;
-      }
+      .not-mobile{ display: none !important; }
       .container { width: min(calc(100% - 22px), var(--container)); }
       .hero-metrics { grid-template-columns: 1fr; }
       .hero-actions .btn { width: 100%; }
@@ -612,11 +619,10 @@
 <body>
   <header class="nav">
     <div class="container nav-inner">
-      <a class="brand" href="#top" aria-label="Shipo Studio home">
-        <img src="./images/shipo-studio-logo.jpg" alt="Shipo Studio logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
-        <span class="brand-mark" style="display:none;">SS</span>
+      <a class="brand" href="#top" aria-label="Shakhawat Arafat home">
+        <span class="brand-mark">SA</span>
         <div class="brand-text">
-          <strong>Shipo Studio</strong>
+          <strong>Shakhawat Arafat</strong>
           <span>Shopify design & development</span>
         </div>
       </a>
@@ -624,8 +630,9 @@
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#work">Work</a>
         <a href="#about">About</a>
+        <a href="#apps">Apps</a>
         <a href="#services">Services</a>
-        <a href="#process">Process</a>
+        <a href="#reviews">Reviews</a>
         <a href="#contact">Contact</a>
       </nav>
 
@@ -640,11 +647,11 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="reveal">
-          <div class="eyebrow"><span class="dot"></span> Better ecommerce design for brands that want to stand out</div>
-          <h1>Professional websites for Shopify brands.</h1>
+          <div class="eyebrow"><span class="dot"></span> Premium Shopify design with clean structure and strong branding</div>
+          <h1>Shopify websites that feel polished and clear.</h1>
           <p>
-            I design and build ecommerce experiences with premium layout, stronger branding, and smooth structure.
-            If a store needs a cleaner homepage, custom sections, or a full redesign, this studio page shows the kind of work I create.
+            I create modern ecommerce experiences with better layout, stronger presentation, and practical structure.
+            From custom sections to full redesigns, my focus is on making stores look professional and easy to trust.
           </p>
 
           <div class="hero-actions">
@@ -655,15 +662,15 @@
           <div class="hero-metrics">
             <div class="metric">
               <strong>Custom Shopify</strong>
-              <span>themes, sections, landing pages</span>
+              <span>Themes, sections, and landing pages</span>
             </div>
             <div class="metric">
               <strong>Conversion focus</strong>
-              <span>clear layout and stronger trust</span>
+              <span>Cleaner layout and stronger trust</span>
             </div>
             <div class="metric">
               <strong>Remote worldwide</strong>
-              <span>client-friendly and fast workflow</span>
+              <span>Fast, reliable, client-friendly workflow</span>
             </div>
           </div>
         </div>
@@ -671,16 +678,16 @@
         <div class="showcase reveal">
           <div class="showcase-top">
             <div class="chip">Portfolio preview</div>
-            <div class="chip">Use your project screenshots here</div>
+            <div class="chip">Use your best screenshot here</div>
           </div>
 
           <div class="project-hero">
             <div class="project-hero-left">
               <div>
                 <h3>A studio-style homepage that feels premium.</h3>
-                <p>Use this space to show your strongest concepts and first impression.</p>
+                <p>Use this space to show your strongest concept and first impression.</p>
               </div>
-              <div class="chip">Best for clients who want clean design</div>
+              <div class="chip">Ideal for brands that want clean design</div>
             </div>
 
             <div class="project-thumb">
@@ -697,13 +704,13 @@
         <div class="section-head reveal">
           <div>
             <h2>About me</h2>
-            <p>Your photo belongs here so visitors can connect the work to the person behind the studio.</p>
+            <p>Visitors should immediately understand who you are, what you do, and why you are credible.</p>
           </div>
         </div>
 
         <div class="about-section">
           <div class="card about-photo reveal">
-            <img src="./images/my image.jpg" alt="About Shipo Studio founder" onerror="this.style.display='none'; this.nextElementSibling.classList.add('show');">
+            <img src="./images/my image.jpg" alt="Shakhawat Arafat" onerror="this.style.display='none'; this.nextElementSibling.classList.add('show');">
             <div class="fallback">Your photo slot<br><br>Use: <strong>./images/my image.jpg</strong></div>
           </div>
           <div class="card about-copy reveal">
@@ -711,14 +718,16 @@
               <span class="label">Shopify developer</span>
               <span class="label">Designer</span>
               <span class="label">Custom sections</span>
+              <span class="label">App publisher</span>
             </div>
             <h3 class="quote">I build stores that look like real brands, not generic templates.</h3>
             <p>
-              Shipo Studio is focused on clean ecommerce design, strong branding, and practical builds that make sense for real business owners.
-              The goal is simple: make the store feel premium, clear, and easy to trust.
+              I’m Shakhawat Arafat, a Shopify designer and developer focused on clean ecommerce design, practical builds,
+              and premium presentation. My goal is to make the store feel clear, elegant, and easy to trust.
             </p>
             <p>
-              Use this section to briefly explain your background, the type of clients you help, and what makes your work different.
+              I also have apps published on the Shopify App Store. You can view my partner profile here:
+              <a href="https://apps.shopify.com/partners/shakhawatarafat" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;">apps.shopify.com/partners/shakhawatarafat</a>
             </p>
             <div class="hero-actions" style="margin-top: 0;">
               <a class="btn btn-primary" href="#contact">Start a project</a>
@@ -734,7 +743,7 @@
         <div class="section-head reveal">
           <div>
             <h2>Selected projects</h2>
-            <p>The filenames below match the images in your GitHub folder so you can use them right away.</p>
+            <p>Each project card is organized with a clear label so the portfolio feels easier to scan.</p>
           </div>
           <a class="btn" href="#contact">Send project info</a>
         </div>
@@ -779,6 +788,51 @@
                 <small>Soft premium branding</small>
               </div>
               <span class="label">Conversion layout</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="apps">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2>Apps published on Shopify App Store</h2>
+            <p>Add your published apps here so people can instantly see that you build beyond themes and sections.</p>
+          </div>
+        </div>
+
+        <div class="apps-grid">
+          <article class="card app-card reveal">
+            <div class="app-top">
+              <div>
+                <span class="label">Published app</span>
+                <h3>Shopify Partner Profile</h3>
+              </div>
+              <span class="label">Live</span>
+            </div>
+            <p>
+              View my published Shopify app profile and app listings here.
+            </p>
+            <div class="hero-actions" style="margin-top:18px;">
+              <a class="btn btn-primary" href="https://apps.shopify.com/partners/shakhawatarafat" target="_blank" rel="noopener noreferrer">Open profile</a>
+            </div>
+          </article>
+
+          <article class="card app-card reveal">
+            <div class="app-top">
+              <div>
+                <span class="label">App showcase</span>
+                <h3>Custom app highlights</h3>
+              </div>
+              <span class="label">Add more</span>
+            </div>
+            <p>
+              Use this space to list each app name, purpose, and a short result statement once you want to showcase them individually.
+            </p>
+            <div class="hero-actions" style="margin-top:18px;">
+              <a class="btn btn-ghost" href="#contact">Ask for app work</a>
             </div>
           </article>
         </div>
@@ -867,9 +921,71 @@
               <div class="label">Logo slot in header</div>
               <div class="label">About me section</div>
               <div class="label">Project image cards</div>
+              <div class="label">Apps published section</div>
               <div class="label">Email and WhatsApp buttons</div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2>Client reviews</h2>
+            <p>These are styled sample placeholders. Replace them with real client quotes before publishing.</p>
+          </div>
+        </div>
+
+        <div class="testimonial-grid">
+          <article class="card testimonial-card reveal">
+            <div class="stars">★★★★★</div>
+            <div class="quote">“The store looked much more premium after the redesign. Clean layout, strong section flow, and fast communication throughout the project.”</div>
+            <div class="author">
+              <div class="avatar"></div>
+              <div>
+                <strong>Client Name</strong>
+                <span>Brand owner</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card testimonial-card reveal">
+            <div class="stars">★★★★★</div>
+            <div class="quote">“Great attention to detail. The custom sections made the website feel more polished and easier for our customers to browse.”</div>
+            <div class="author">
+              <div class="avatar"></div>
+              <div>
+                <strong>Client Name</strong>
+                <span>Ecommerce founder</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card testimonial-card reveal">
+            <div class="stars">★★★★★</div>
+            <div class="quote">“Very organized work. The project was delivered with a clear structure and a more professional look than our previous version.”</div>
+            <div class="author">
+              <div class="avatar"></div>
+              <div>
+                <strong>Client Name</strong>
+                <span>Marketing lead</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card testimonial-card reveal">
+            <div class="stars">★★★★★</div>
+            <div class="quote">“Easy to work with and strong on design decisions. The final result matched our brand direction much better than expected.”</div>
+            <div class="author">
+              <div class="avatar"></div>
+              <div>
+                <strong>Client Name</strong>
+                <span>Store manager</span>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -919,7 +1035,7 @@
         <div class="card faq-card reveal">
           <details class="faq-item" open>
             <summary class="faq-q">What kind of services do you offer?<span class="plus">−</span></summary>
-            <div class="faq-answer">Shopify store design, custom sections, and redesigns that make the website feel more professional and easier to use.</div>
+            <div class="faq-answer">Shopify store design, custom sections, app-related work, and redesigns that make the website feel more professional and easier to use.</div>
           </details>
           <details class="faq-item">
             <summary class="faq-q">Can you work with my existing store?<span class="plus">+</span></summary>
@@ -944,7 +1060,7 @@
 
         <div class="contact-wrap">
           <div class="card contact-card reveal">
-            <h3>Shipo Studio</h3>
+            <h3>Shakhawat Arafat</h3>
             <p>Shopify design & development for brands that want a stronger, more polished online presence.</p>
 
             <div class="hero-actions" style="margin-top:18px;">
@@ -966,23 +1082,23 @@
 
   <footer class="footer">
     <div class="container footer-inner">
-      <div>© <span id="year"></span> Shipo Studio. All rights reserved.</div>
+      <div>© <span id="year"></span> Shakhawat Arafat. All rights reserved.</div>
       <div style="display:flex; gap:14px; flex-wrap:wrap;">
         <a href="#work">Work</a>
         <a href="#about">About</a>
-        <a href="#services">Services</a>
+        <a href="#apps">Apps</a>
+        <a href="#reviews">Reviews</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
   </footer>
 
   <a class="whatsapp-fab" href="https://wa.me/447366434592" target="_blank" rel="noopener noreferrer" aria-label="Message on WhatsApp">
-    <img src="./images/whatsapp.png">
+    <img src="./images/whatsapp.png" alt="WhatsApp icon">
   </a>
 
   <script>
-    const year = document.getElementById('year');
-    year.textContent = new Date().getFullYear();
+    document.getElementById('year').textContent = new Date().getFullYear();
 
     const emailBtn = document.getElementById('emailBtn');
     emailBtn.addEventListener('click', (e) => {
