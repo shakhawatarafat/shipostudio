@@ -47,6 +47,22 @@
     .nav {
       position: sticky;
       top: 0;
+      z-index: 200;
+      background: rgba(5,7,12,.74);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 16px 0;
+      position: relative;
+      z-index: 201;
+    }
+    .brand {
+      top: 0;
       z-index: 100;
       background: rgba(5,7,12,.74);
       backdrop-filter: blur(18px);
@@ -76,6 +92,15 @@
       color: #fff;
       font-weight: 800;
       letter-spacing: -.04em;
+    }
+    .brand img {
+      width: 46px;
+      height: 46px;
+      border-radius: 15px;
+      flex: 0 0 auto;
+      object-fit: cover;
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--line);
     }
     .brand-text { display: flex; flex-direction: column; min-width: 0; }
     .brand-text strong { font-size: 1.05rem; letter-spacing: -.04em; line-height: 1.1; }
