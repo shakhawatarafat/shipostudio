@@ -582,6 +582,23 @@
       h1 { font-size: clamp(2.7rem, 13vw, 4.6rem); }
       .whatsapp-fab { right: 14px; bottom: 14px; width: 58px; height: 58px; }
     }
+
+    /* Team profiles — consistent with the existing Shipo Studio design */
+    .team-intro { max-width: 72ch; color: var(--muted); margin: 0 0 24px; }
+    .team-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .team-card { overflow: hidden; }
+    .team-media { height: 335px; position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(79,123,255,.16), rgba(29,183,216,.10)); }
+    .team-media img { width: 100%; height: 100%; object-fit: cover; object-position: center 28%; }
+    .team-placeholder { position: absolute; inset: 0; display: none; place-items: center; text-align: center; background: radial-gradient(circle at 50% 30%, rgba(79,123,255,.3), transparent 60%), linear-gradient(145deg, #17233e, #0b1220); }
+    .team-placeholder.show { display: grid; }
+    .team-placeholder .initials { width: 104px; height: 104px; display: grid; place-items: center; border-radius: 30px; font-size: 2.5rem; font-weight: 800; background: linear-gradient(135deg, rgba(79,123,255,.6), rgba(29,183,216,.48)); border: 1px solid rgba(255,255,255,.18); }
+    .team-content { padding: 24px; }
+    .team-content h3 { font-size: 1.5rem; letter-spacing: -.04em; margin: 0 0 4px; }
+    .team-role { color: #a9c4ff; font-size: .95rem; font-weight: 600; margin: 0 0 14px; }
+    .team-content p { color: var(--muted); margin: 0 0 16px; }
+    .team-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; }
+    .team-content .btn { max-width: 100%; }
+    @media (max-width: 760px) { .team-grid { grid-template-columns: 1fr; } .team-media { height: 310px; } }
   </style>
 </head>
 <body>
@@ -622,7 +639,7 @@
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#work">See selected work</a>
-            <a class="btn btn-ghost" href="#about">About me</a>
+            <a class="btn btn-ghost" href="#about">Meet our team</a>
           </div>
           <div class="hero-metrics">
             <div class="metric">
@@ -665,35 +682,38 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <h2>About me</h2>
-            <p>Visitors should immediately understand who you are, what you do, and why your work stands out.</p>
+            <h2>Meet our team</h2>
+            <p>The people behind SHIPO Studio's Shopify design and development work.</p>
           </div>
         </div>
-        <div class="about-section">
-          <div class="card about-photo reveal">
-            <img src="./images/my image.jpg" alt="Shakhawat Arafat" onerror="this.style.display='none'; this.nextElementSibling.classList.add('show');">
-            <div class="fallback">Your photo slot<br><br>Use: <strong>./images/my image.jpg</strong></div>
-          </div>
-          <div class="card about-copy reveal">
-            <div class="tag-row">
-              <span class="label">Shopify developer</span>
-              <span class="label">Designer</span>
-              <span class="label">Custom sections</span>
-              <span class="label">App publisher</span>
+        <p class="team-intro reveal">SHIPO Studio brings together design, development, and practical ecommerce problem-solving to create polished Shopify experiences. Meet the people helping bring our projects to life.</p>
+        <div class="team-grid">
+          <article class="card team-card reveal">
+            <div class="team-media">
+              <img src="./images/my image.jpg" alt="Shakhawat Arafat, founder of SHIPO Studio" onerror="this.style.display='none'; this.nextElementSibling.classList.add('show');">
+              <div class="team-placeholder"><span class="initials">SA</span></div>
             </div>
-            <h3 class="quote">I build stores that look like real brands, not generic templates.</h3>
-            <p>
-              I’m Shakhawat Arafat, the founder of Shipo Studio, a Shopify designer and developer focused on clean ecommerce design, practical builds, and premium presentation. The goal is simple: make the store feel clear, elegant, and easy to trust.
-            </p>
-            <p>
-              I also have apps published on the Shopify App Store. View my partner profile here:
-              <a href="https://apps.shopify.com/partners/shakhawatarafat" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;">apps.shopify.com/partners/shakhawatarafat</a>
-            </p>
-            <div class="hero-actions" style="margin-top: 0;">
-              <a class="btn btn-primary" href="#contact">Start a project</a>
-              <a class="btn btn-ghost" href="#services">See services</a>
+            <div class="team-content">
+              <h3>Shakhawat Arafat</h3>
+              <div class="team-role">Founder &amp; Technical Director</div>
+              <p>Shopify developer focused on premium storefronts, custom sections, integrations, and Shopify app development. I founded SHIPO Studio to help brands build cleaner, more dependable ecommerce experiences.</p>
+              <div class="team-tags"><span class="label">Shopify development</span><span class="label">Custom apps</span><span class="label">Technical direction</span></div>
+              <a class="btn btn-ghost" href="https://apps.shopify.com/partners/shakhawatarafat" target="_blank" rel="noopener noreferrer">View Shopify Partner profile</a>
             </div>
-          </div>
+          </article>
+          <article class="card team-card reveal">
+            <div class="team-media">
+              <img src="./images/sabina.jpg" alt="Sabina, Agency Director and Shopify Developer at SHIPO Studio" onerror="this.style.display='none'; this.nextElementSibling.classList.add('show');">
+              <div class="team-placeholder"><span class="initials">S</span></div>
+            </div>
+            <div class="team-content">
+              <h3>Sabina</h3>
+              <div class="team-role">Agency Director &amp; Shopify Developer</div>
+              <p>Sabina supports Shopify website development, store customization, and client project coordination at SHIPO Studio, helping turn business requirements into clear, practical ecommerce solutions.</p>
+              <div class="team-tags"><span class="label">Shopify stores</span><span class="label">Website customization</span><span class="label">Project coordination</span></div>
+              <a class="btn btn-primary" href="#contact">Work with our team</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -768,7 +788,7 @@
               </div>
               <span class="label">Live</span>
             </div>
-            <p>View my published Shopify app profile and app listings here.</p>
+            <p>View our founder’s published Shopify app profile and app listings here.</p>
             <div class="hero-actions" style="margin-top:18px;">
               <a class="btn btn-primary" href="https://apps.shopify.com/partners/shakhawatarafat" target="_blank" rel="noopener noreferrer">Open profile</a>
             </div>
@@ -822,7 +842,7 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <h2>How I work</h2>
+            <h2>How we work</h2>
             <p>This section makes the process clear before a client reaches out.</p>
           </div>
         </div>
@@ -841,7 +861,7 @@
             <p style="margin-top:14px;">It gives the page a polished feel and creates clear places for your best images and proof of work.</p>
             <div style="display:grid; gap:12px; margin-top:18px;">
               <div class="label">Logo slot in header</div>
-              <div class="label">About me section</div>
+              <div class="label">Meet our team section</div>
               <div class="label">Project image cards</div>
               <div class="label">Apps published section</div>
               <div class="label">Email and WhatsApp buttons</div>
@@ -927,7 +947,7 @@
           </details>
           <details class="faq-item">
             <summary class="faq-q">Can you work with my existing store?<span class="plus">+</span></summary>
-            <div class="faq-answer">Yes. I can improve an existing store, clean the layout, and rebuild sections without changing the whole brand.</div>
+            <div class="faq-answer">Yes. We can improve an existing store, clean the layout, and rebuild sections without changing the whole brand.</div>
           </details>
           <details class="faq-item">
             <summary class="faq-q">How do I contact you?<span class="plus">+</span></summary>
@@ -949,9 +969,9 @@
           <div class="card contact-card reveal">
             <h3>Shipo Studio</h3>
             <p>Shopify design & development for brands that want a stronger, more polished online presence.</p>
-            <p style="margin-top:14px;">The fastest way to reach me is through email or WhatsApp.</p>
+            <p style="margin-top:14px;">Reach our team through email or WhatsApp.</p>
             <div class="hero-actions" style="margin-top:18px;">
-              <a class="btn btn-primary" id="emailBtn" href="mailto:shakhawatarafat@gmail.com">Email me</a>
+              <a class="btn btn-primary" id="emailBtn" href="mailto:shakhawatarafat@gmail.com">Email our team</a>
               <a class="btn btn-ghost" href="https://wa.me/447366434592" target="_blank" rel="noopener noreferrer">WhatsApp</a>
             </div>
           </div>
